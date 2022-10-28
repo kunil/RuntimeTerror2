@@ -4,21 +4,23 @@ public class RunGame {
 	
 	// potential idea: hotter or colder concept applied to monster
 	
-	public static boolean isGameOver;
+	public  boolean isGameOver=false;
 	
 	// new grid
-	public static GameGrid currGameGrid = new GameGrid();
+	public GameGrid currGameGrid = new GameGrid();
 
 	
-	public static void runGame() {
+	public void runGame() {
 		
+		
+		System.out.println("In game");
 		// initialise game grid
 		currGameGrid.gameGridInit();	
 		
 		while (isGameOver==false) {
 			// take user input
 			UserInput input = new UserInput();
-			String uInput = UserInput.readInput();
+			String uInput = input.readInput();
 			
 			// if they want to quit
 			if (uInput.equals("q")) {

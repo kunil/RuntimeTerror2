@@ -8,8 +8,11 @@ public class GameGrid {
 	public int gridSize = 5;
 	public int[][] gameGrid;
 	public Monster[] monsterArray = new Monster[1];
-	public Player player;
-	public Treasure treasure;
+	
+	//monsterArray[0].posX=1;
+	
+	public Player player = new Player();
+	public Treasure treasure = new Treasure();
 //	public boolean gameOver;
 	
 	// TO BE IMPLEMENTED
@@ -24,19 +27,20 @@ public class GameGrid {
 		
 		// player config
 		int[] plrPositionArr = {0,0};
-		GameEntity.setPosition(plrPositionArr);
+		GameEntity gameEntity = new GameEntity();
+		gameEntity.setPosition(plrPositionArr);
 		
 		// monster config
 		Monster monster = new Monster();
-		int[] monsterInitPos = {ThreadLocalRandom.current().nextInt(0, gridSize),
-				ThreadLocalRandom.current().nextInt(0, gridSize)};
+		int[] monsterInitPos = {ThreadLocalRandom.current().nextInt(0, gridSize-1),
+				ThreadLocalRandom.current().nextInt(0, gridSize-1)};
 		monster.setPosition(monsterInitPos); // fill in later
 		monsterArray[0] = monster;
 		
 		// treasure config
 		Treasure treasure = new Treasure();
-		int[] treasureInitPos = {ThreadLocalRandom.current().nextInt(0, gridSize + 1),
-				ThreadLocalRandom.current().nextInt(0, gridSize + 1)};
+		int[] treasureInitPos = {ThreadLocalRandom.current().nextInt(0, gridSize-1),
+				ThreadLocalRandom.current().nextInt(0, gridSize-1)};
 		treasure.setPosition(treasureInitPos);
 	}
 	
@@ -88,12 +92,12 @@ public class GameGrid {
 			// if player position = monster position
 				// output: unique monster method
 				// return 0
-		if (player.getPosition().equals(treasure.getPosition())) {
+		if (player.getPosition()[0]==treasure.getPosition()[0] && player.getPosition()[1]==treasure.getPosition()[1]) {
 			treasure.displayUniqueMessage();
 			return 1;
 		} else {
 			for (int i=0;i<monsterArray.length;i++) {
-				if (player.getPosition().equals(monsterArray[i].getPosition())){
+				if (player.getPosition()[0]==(monsterArray[i].getPosition()[0]) && player.getPosition()[1]==(monsterArray[i].getPosition()[1])){
 					monsterArray[i].displayUniqueMessage();
 					return 0;
 				}
@@ -106,12 +110,24 @@ public class GameGrid {
 	public void displayGrid() {
 		// description: displays grid with player shown
 			// don't want to show monster or treasure as that ruins concept of game
-		for (int j=0;j<gridSize;j++) {
+		System.out.println("Tx:"+treasure.getPosition()[0]);
+		System.out.println("Tx:"+treasure.getPosition()[1]);
+		
+		
+		for (int j=gridSize-1;j>=0;j--) {
 			for (int i=0;i<gridSize;i++) {
-				if (i == player.getPosition()[1] && j==player.getPosition()[0]) {
+				if (i == player.getPosition()[0] && j==player.getPosition()[1]) {
 					System.out.print("P ");
-				} else {
-					System.out.println("* ");
+				} 
+				else if(i == monsterArray[0].getPosition()[0] && j==monsterArray[0].getPosition()[1]) {
+					System.out.print("O ");
+					
+				}
+				else if(i == treasure.getPosition()[0] && j==treasure.getPosition()[1]) {
+					System.out.print("T ");
+				}
+				else {
+					System.out.print("* ");
 				}
 			}
 			System.out.println();
