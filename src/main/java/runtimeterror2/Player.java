@@ -14,7 +14,25 @@ public class Player extends GameEntity {
 			// down = [0,-1]
 			// left = [-1,0]
 			// right = [1,0]
-		return null;
+		int[] arrayToReturn = {0, 0};
+		if (userInput.toLowerCase().equals("w")) {
+			arrayToReturn[0] = 0;
+			arrayToReturn[1] = 1;
+		}
+		else if (userInput.toLowerCase().equals("a")) {
+			arrayToReturn[0] = -1;
+			arrayToReturn[1] = 0;
+		}
+		else if (userInput.toLowerCase().equals("s")) {
+			arrayToReturn[0] = 0;
+			arrayToReturn[1] = -1;
+		}
+		else if (userInput.toLowerCase().equals("d")) {
+			arrayToReturn[0] = 1;
+			arrayToReturn[1] = 0;
+		}
+		
+		return arrayToReturn;
 	}
 	
 

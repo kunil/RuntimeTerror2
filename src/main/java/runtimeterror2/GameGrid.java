@@ -7,7 +7,7 @@ public class GameGrid {
 	// attributes: grid size, monster obj, player obj, treasure obj
 	public int gridSize = 5;
 	public int[][] gameGrid;
-	public Monster[] monsterArray;
+	public Monster[] monsterArray = new Monster[0];
 	public Player player;
 	public Treasure treasure;
 //	public boolean gameOver;
