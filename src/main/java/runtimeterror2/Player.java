@@ -7,7 +7,7 @@ public class Player extends GameEntity {
 	
 	// TO BE IMPLEMENTED
 	// move method
-	public int[] playerMove(UserInput userInput) {
+	public int[] playerMove(String userInput) {
 		// description: takes in user input, returns array based on movements
 		// Outputs:
 			// up = [0,1]
