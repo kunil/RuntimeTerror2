@@ -24,7 +24,7 @@ public class GameGrid {
 		
 		// player config
 		int[] plrPositionArr = {0,0};
-		player.setPosition(plrPositionArr);
+		GameEntity.setPosition(plrPositionArr);
 		
 		// monster config
 		Monster monster = new Monster();
@@ -41,14 +41,16 @@ public class GameGrid {
 	}
 	
 	public void resetPlayerPosition() {
-		player.setPosition({0,0});
+		int[] newPos = {0,0};
+		player.setPosition(newPos);
 	}
 	
 	public void updatePlayerPosition(String userInput) {
 		int pMove[] = player.playerMove(userInput);
 		int newX = pMove[0] + player.getPosition()[0];
 		int newY = pMove[1] + player.getPosition()[1];
-		player.setPosition({newX, newY});
+		int[] newPos = {newX, newY};
+		player.setPosition(newPos);
 	}
 	
 	public int[] gridMovePlayer(String userInput) {
