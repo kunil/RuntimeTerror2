@@ -7,6 +7,7 @@ public class Monster extends GameEntity{
 	// TO BE IMPLEMENTED
 	public void displayUniqueMessage() {
 		// description: output message
+		System.out.println("You've hit a monster! Go back to start.");
 	}
 
 }

@@ -7,6 +7,7 @@ public class Treasure extends GameEntity{
 	// TO BE IMPLEMENTED
 	public void displayUniqueMessage() {
 		// description: output message
+		System.out.println("You've hit the treasure!");
 	}
 
 }
