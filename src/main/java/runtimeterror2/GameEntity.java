@@ -4,8 +4,8 @@ public class GameEntity {
 	
 	// location
 	// unique message
-	public int posX;
-	public int posY;
+	public static int posX;
+	public static int posY;
 	
 	
 	// entity (subclasses) = treasure, monster, player
@@ -18,10 +18,10 @@ public class GameEntity {
 	}
 	
 	// TO BE IMPLEMENTED
-	public void setPosition(int pos[]) {
+	public static void setPosition(int pos[]) {
 		// description: player posX=0, posY=0
-		pos[0]=posX;
-		pos[1]=posY;
+		posX=pos[0];
+		posY=pos[1];
 	}
 		
 	
