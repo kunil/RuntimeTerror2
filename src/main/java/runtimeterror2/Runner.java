@@ -10,22 +10,25 @@ public class Runner {
 
 		String input = "";
 		Scanner sc = new Scanner(System.in);
-		// while (true) {
+		while (true) {
 
 		System.out.println("Do you want to play a new game [y/n]");
 		input = sc.nextLine();
 
 		if (input.equalsIgnoreCase("y")) {
-			System.out.println("Game running");
+			
 			 RunGame newGame= new RunGame();
+			 System.out.println("Object created"+newGame);
 			 newGame.runGame();
+			 System.out.println("Game created");
 		}
 
 		else {
 			System.out.println("Thanks for playing the game see you next time");
+			break;
 		}
 
-		// }
+		 }
 	}
 	
 	// TO BE IMPLEMENTED

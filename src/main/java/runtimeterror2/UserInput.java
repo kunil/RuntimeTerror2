@@ -3,7 +3,7 @@ package runtimeterror2;
 import java.util.Scanner;
 
 public class UserInput {
-	public static String readInput() {
+	public String readInput() {
 		
 		boolean validInput = false;
 		String validDirection = null;
