@@ -20,8 +20,8 @@ public class GameEntity {
 	// TO BE IMPLEMENTED
 	public void setPosition(int pos[]) {
 		// description: player posX=0, posY=0
-		pos[0]=posX;
-		pos[1]=posY;
+		posX=pos[0];
+		posY=pos[1];
 	}
 		
 	
