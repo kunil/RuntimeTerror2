@@ -7,7 +7,7 @@ public class GameGrid {
 	// attributes: grid size, monster obj, player obj, treasure obj
 	public int gridSize = 5;
 	public int[][] gameGrid;
-	public Monster[] monsterArray = new Monster[0];
+	public Monster[] monsterArray = new Monster[1];
 	public Player player;
 	public Treasure treasure;
 //	public boolean gameOver;
@@ -28,8 +28,8 @@ public class GameGrid {
 		
 		// monster config
 		Monster monster = new Monster();
-		int[] monsterInitPos = {ThreadLocalRandom.current().nextInt(0, gridSize + 1),
-				ThreadLocalRandom.current().nextInt(0, gridSize + 1)};
+		int[] monsterInitPos = {ThreadLocalRandom.current().nextInt(0, gridSize),
+				ThreadLocalRandom.current().nextInt(0, gridSize)};
 		monster.setPosition(monsterInitPos); // fill in later
 		monsterArray[0] = monster;
 		
