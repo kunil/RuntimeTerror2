@@ -1,8 +1,9 @@
-package runtimeterror2;
+package com.qa.runtimeterror2;
 
-public class Monster extends GameEntity{
+public class GameEntity {
 	
-	public String uniqueMessage;
+	// location
+	// unique message
 	public static int posX;
 	public static int posY;
 	
@@ -17,18 +18,13 @@ public class Monster extends GameEntity{
 	}
 	
 	// TO BE IMPLEMENTED
-	public  void setPosition(int pos[]) {
+	public void setPosition(int pos[]) {
 		// description: player posX=0, posY=0
 		posX=pos[0];
 		posY=pos[1];
 	}
 		
 	
-	
-	// TO BE IMPLEMENTED
-	public void displayUniqueMessage() {
-		// description: output message
-		System.out.println("You've hit a monster! Go back to start.");
-	}
+
 
 }
